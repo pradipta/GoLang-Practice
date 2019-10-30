@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "time"
 
-func main(){
+func timeTry(){
 	fmt.Println("Time is : ", time.Now())
 	fmt.Println("Time2 is :", time.Now().Weekday())
 
@@ -13,4 +13,11 @@ func main(){
 		fmt.Println("Damn")
 	}
 
+}
+
+func varTry(){
+	var c, python, java = true, false, "best"
+	fmt.Println(c, python, java)
+	//java = true
+	//fmt.Println("java = ", java)
 }
