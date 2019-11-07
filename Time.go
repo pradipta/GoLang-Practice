@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"crypto/tls"
+	"fmt"
+)
 import "time"
 
 func timeTry(){
@@ -18,6 +21,45 @@ func timeTry(){
 func varTry(){
 	var c, python, java = true, false, "best"
 	fmt.Println(c, python, java)
-	//java = true
-	//fmt.Println("java = ", java)
+}
+
+func mapTry(mode string){
+	modeMap := map[string]tls.RenegotiationSupport{
+		"once":   tls.RenegotiateOnceAsClient,
+		"freely": tls.RenegotiateFreelyAsClient,
+		"never":  tls.RenegotiateNever,
+	}
+	if val, ok := modeMap[mode]; ok {
+		if val == val {
+
+		}
+		fmt.Println("found")
+	} else {
+		//if anything other than the allowed values is passed, it'll thrown an error
+		fmt.Println("not found")
+	}
+}
+
+func mapTryNoElse(mode string){
+	modeMap := map[string]tls.RenegotiationSupport{
+		"once":   tls.RenegotiateOnceAsClient,
+		"freely": tls.RenegotiateFreelyAsClient,
+		"never":  tls.RenegotiateNever,
+	}
+
+
+	val, ok := modeMap[mode]
+	if val == val{
+
+	}
+	if !ok{
+		if val == val{
+
+		}
+		fmt.Println("herenotfound")
+		return
+	}
+	fmt.Println("found")
+
+	fmt.Println(ok)
 }
