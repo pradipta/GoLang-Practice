@@ -10,20 +10,9 @@ func main() {
 
 	//http.Handle("/metrics", promhttp.Handler())
 	//http.ListenAndServe(":2112", nil)
-	cards := deck{}
 
-	cardsShape := []string {"Spade", "Club"}
-	cardsNumber := []string {"Ace", "King"}
+	cards := newDeck()
 
-	for i, shape := range cardsShape{
-		for j, number := range cardsNumber{
-			if i == j{
-
-			}
-			var now string = number+" "+shape
-			cards = append(cards, now)
-		}
-	}
 	cards.print()
 
 }
